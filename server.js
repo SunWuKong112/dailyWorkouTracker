@@ -25,9 +25,10 @@ db.Workout.create({})
   console.log(message);
 });
 
-
+require("./routes/html-routes")(app);
+require("./routes/api-routes")(app);
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`App running on port ${PORT}.`);
 });
