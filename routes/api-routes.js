@@ -21,8 +21,8 @@ module.exports = function (app) {
           });
      });
    
-     app.put("/api/workouts/:id", ({ body }, res) => {
-          db.Workout.create(body)
+     app.put("/api/workouts/:id", ({body}, res) => {
+          db.Workout.update({_id:req.params.id},{$push:{exercises:body}})
           .then(dbInfo => {
                res.json(dbInfo);
           })
